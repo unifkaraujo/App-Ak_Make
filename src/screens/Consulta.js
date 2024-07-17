@@ -506,7 +506,7 @@ export default class App extends Component {
               <Icon name="search" size={25} color="black" style={{padding: 5}}/>
             </TouchableOpacity>
 
-            <TouchableOpacity onPress={this.abrirModal}>
+            <TouchableOpacity onPress={this.abrirModal} style={{flex: 1}}>
               <TextInput style={Estilo.InputText}
                 placeholder="Localizar Clientes Cadastrados"
                 value={this.state.nomeInput}
@@ -524,10 +524,21 @@ export default class App extends Component {
 
         <TouchableWithoutFeedback 
           onPress={this.fecharModal}>
-        <View style={{alignItems: 'center'}}> 
-          <Image style={{width: '100%', height: 150, marginBottom: 10}} 
+        
+        <View style={{flexDirection: 'row'}}> 
+
+          <Image style={{width: '100%', height: 150, marginBottom: 0}} 
           source={require('../../images/fundobranco.jpeg')} />
-        </View>
+
+          <TouchableOpacity
+            style={{position: 'absolute', right: 10, top: 10}}
+            activeOpacity={0.7}
+            onPress={() => this.componentDidMount()}>
+            <IconIo name="reload" size={27} color='black' />
+          </TouchableOpacity>  
+
+        </View>  
+        
         </TouchableWithoutFeedback>
         
         <View style={{flex: 1}}>
